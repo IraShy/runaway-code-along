@@ -1,3 +1,3 @@
-Click the runner if you can. Every click results in the cunner's colour change and counter's value increase.
+Click the runner if you can. Every click results in the runner's colour change and the counter's value increase.
 
 https://runaway-codealong.netlify.app/
