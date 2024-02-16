@@ -1,5 +1,7 @@
 const randomLocation = (scope) => {
-  return `${Math.floor(Math.random() * scope)}px`;
+  const [min, max] = scope;
+  const newposition = Math.floor(Math.random() * (max - min)) + min;
+  return `${newposition}px`;
 };
 
 const runAway = (element, height, width) => {
@@ -13,4 +15,11 @@ const changeColor = (element) => {
   element.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
 };
 
-export { randomLocation, runAway, changeColor };
+const updateCounter = () => {
+  const counter = document.querySelector("#counter");
+  console.log(counter.innerText);
+  let currentValue = parseInt(counter.innerText);
+  counter.innerText = currentValue + 1;
+};
+
+export { randomLocation, runAway, changeColor, updateCounter };

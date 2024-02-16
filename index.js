@@ -1,13 +1,27 @@
-import { runAway, changeColor } from "./utils/functions.js";
+import { runAway, changeColor, updateCounter } from "./utils/functions.js";
 
 const runner = document.getElementById("runner");
 
 runner.addEventListener("mouseover", () => {
   const runnerSize = parseInt(runner.style.height);
-  const height = document.body.clientHeight - runnerSize;
-  const width = document.body.clientWidth - runnerSize;
+  const container = document.querySelector("#container");
 
-  runAway(runner, height, width);
+  const top = parseInt(container.offsetTop) + runnerSize;
+  const bottom =
+    top +
+    parseInt(window.getComputedStyle(container).getPropertyValue("height")) -
+    2 * runnerSize;
+
+  const left = parseInt(container.offsetLeft) + runnerSize;
+  const right =
+    left +
+    parseInt(window.getComputedStyle(container).getPropertyValue("width")) -
+    2 * runnerSize;
+
+  runAway(runner, [top, bottom], [left, right]);
 });
 
-runner.addEventListener("click", () => changeColor(runner));
+runner.addEventListener("click", () => {
+  changeColor(runner);
+  updateCounter();
+});
