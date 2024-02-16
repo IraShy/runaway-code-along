@@ -17,7 +17,6 @@ const changeColor = (element) => {
 
 const updateCounter = () => {
   const counter = document.querySelector("#counter");
-  console.log(counter.innerText);
   let currentValue = parseInt(counter.innerText);
   counter.innerText = currentValue + 1;
 };

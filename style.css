@@ -1,3 +1,7 @@
+:root {
+  --runner-size: 100px;
+}
+
 body * {
   margin: 0;
   padding: 0;
@@ -13,14 +17,16 @@ body {
   width: 80%;
   height: calc(80% - 3.2em - 45px);
   border: 2px blue solid;
-  margin: calc(10% - 1.6em - 25px) auto;
+  margin: 50px auto;
 }
 
 #runner {
   background-color: magenta;
   position: absolute;
-  top: 50vh;
-  left: 50vw;
+  width: var(--runner-size);
+  height: var(--runner-size);
+  top: calc((100vh - var(--runner-size)) / 2);
+  left: calc((100vw - var(--runner-size)) / 2);
   border-radius: 50%;
   transition: 1s;
 }

@@ -3,7 +3,9 @@ import { runAway, changeColor, updateCounter } from "./utils/functions.js";
 const runner = document.getElementById("runner");
 
 runner.addEventListener("mouseover", () => {
-  const runnerSize = parseInt(runner.style.height);
+  const runnerSize = parseInt(
+    window.getComputedStyle(runner).getPropertyValue("height")
+  );
   const container = document.querySelector("#container");
 
   const top = parseInt(container.offsetTop) + runnerSize;
